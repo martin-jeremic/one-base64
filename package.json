@@ -1,0 +1,77 @@
+{
+  "name": "one-base64",
+  "displayName": "One Base64",
+  "description": "Encode and decode selected text to/from Base64 directly in VS Code editor. Fully offline, no external dependencies required.",
+  "version": "1.0.0",
+  "publisher": "dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/one-base64.git"
+  },
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "base64",
+    "encode",
+    "decode",
+    "converter",
+    "offline"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "base64Encoder.encode",
+        "title": "Base64: Encode selection"
+      },
+      {
+        "command": "base64Encoder.decode",
+        "title": "Base64: Decode selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "base64Encoder.encode",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "base64Encoder.decode",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.108.1",
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "@vscode/vsce": "^3.7.1",
+    "semantic-release": "^25.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.1.0"
+  }
+}
