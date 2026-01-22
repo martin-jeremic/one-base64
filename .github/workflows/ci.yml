@@ -26,3 +26,15 @@ jobs:
 
       - name: Compile
         run: npm run compile
+      - name: Read package version
+        id: pkg
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Package VSIX
+        run: npx vsce package -o one-base64-${{ steps.pkg.outputs.version }}.vsix
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-base64-${{ steps.pkg.outputs.version }}.vsix
+          path: one-base64-${{ steps.pkg.outputs.version }}.vsix

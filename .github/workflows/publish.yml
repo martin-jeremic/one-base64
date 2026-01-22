@@ -31,26 +31,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Compile
-        run: npm run compile
-
       - name: Read package version
         id: pkg
         run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
-      - name: Package VSIX with versioned name
-        run: npx vsce package -o one-base64-${{ steps.pkg.outputs.version }}.vsix
-
-      - name: Upload VSIX artifact
-        uses: actions/upload-artifact@v4
+      - name: Download VSIX from CI
+        uses: actions/download-artifact@v4
         with:
           name: one-base64-${{ steps.pkg.outputs.version }}.vsix
-          path: one-base64-${{ steps.pkg.outputs.version }}.vsix
 
       - name: Publish to VS Code Marketplace
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: npx vsce publish -p "$VSCE_PAT"
+        run: npx vsce publish -p "$VSCE_PAT" one-base64-${{ steps.pkg.outputs.version }}.vsix
