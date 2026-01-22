@@ -1,0 +1,49 @@
+module.exports = {
+  branches: ['main'],
+  plugins: [
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'angular',
+      },
+    ],
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'angular',
+      },
+    ],
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'CHANGELOG.md',
+      },
+    ],
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'npm run compile',
+        publishCmd: 'npx @vscode/vsce publish --pat ${VSCE_PAT}',
+      },
+    ],
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        addReleases: 'top',
+      },
+    ],
+  ],
+};

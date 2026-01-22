@@ -1,0 +1,77 @@
+{
+  "name": "base64-encoder",
+  "displayName": "Base64 Encoder/Decoder",
+  "description": "Encode and decode selected text to/from Base64 directly in VS Code editor. Fully offline, no external dependencies required.",
+  "version": "1.0.0",
+  "publisher": "dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/base64-encoder.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "base64",
+    "encode",
+    "decode",
+    "converter",
+    "offline"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "base64Encoder.encode",
+        "title": "Base64: Encode selection"
+      },
+      {
+        "command": "base64Encoder.decode",
+        "title": "Base64: Decode selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "base64Encoder.encode",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "base64Encoder.decode",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.22.0",
+    "semantic-release": "^23.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/exec": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^9.0.0",
+    "@semantic-release/release-notes-generator": "^12.0.0"
+  }
+}
