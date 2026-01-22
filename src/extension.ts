@@ -10,7 +10,7 @@ import { EncodeCommand, DecodeCommand } from './commands/TextTransformCommand';
  * Follows Single Responsibility Principle - only handles setup
  */
 export function activate(context: vscode.ExtensionContext): void {
-    console.log('Base64 Encoder/Decoder extension activated');
+    console.log('One Base64 extension activated');
 
     // Dependency Injection - create service instances
     const codec = new Base64Codec();
@@ -40,5 +40,5 @@ export function activate(context: vscode.ExtensionContext): void {
  * Extension deactivation cleanup
  */
 export function deactivate(): void {
-    console.log('Base64 Encoder/Decoder extension deactivated');
+    console.log('One Base64 extension deactivated');
 }

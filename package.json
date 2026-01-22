@@ -1,15 +1,15 @@
 {
-  "name": "base64-encoder",
-  "displayName": "Base64 Encoder/Decoder",
+  "name": "one-base64",
+  "displayName": "One Base64",
   "description": "Encode and decode selected text to/from Base64 directly in VS Code editor. Fully offline, no external dependencies required.",
   "version": "1.0.0",
   "publisher": "dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/base64-encoder.git"
+    "url": "https://github.com/yourusername/one-base64.git"
   },
   "engines": {
-    "vscode": "^1.90.0"
+    "vscode": "^1.108.0"
   },
   "categories": [
     "Other"
@@ -59,19 +59,19 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@types/vscode": "^1.90.0",
-    "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.0.0",
-    "typescript": "^5.0.0",
-    "@vscode/vsce": "^2.22.0",
-    "semantic-release": "^23.0.0",
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/commit-analyzer": "^11.0.0",
-    "@semantic-release/exec": "^6.0.0",
-    "@semantic-release/git": "^10.0.0",
-    "@semantic-release/github": "^9.0.0",
-    "@semantic-release/release-notes-generator": "^12.0.0"
+    "@types/vscode": "^1.108.1",
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "@vscode/vsce": "^3.7.1",
+    "semantic-release": "^25.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.1.0"
   }
 }

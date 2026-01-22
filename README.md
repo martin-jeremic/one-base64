@@ -1,4 +1,4 @@
-# Base64 Encoder/Decoder VS Code Extension
+# One Base64 VS Code Extension
 
 ## Overview
 
@@ -253,7 +253,7 @@ Both follow identical error handling pattern for consistency.
    ```bash
    vsce package
    ```
-   Generates `base64-encoder-1.0.0.vsix` for installation
+   Generates `one-base64-1.0.0.vsix` for installation
 
 3. **Install locally**:
    - Open VS Code
@@ -445,18 +445,18 @@ Update your `package.json` with your publisher information:
 
 ```json
 {
-  "name": "base64-encoder",
-  "displayName": "Base64 Encoder/Decoder",
+   "name": "one-base64",
+   "displayName": "One Base64",
   "publisher": "your-publisher-name",
   "version": "1.0.0",
   "description": "Encode and decode selected text to/from Base64...",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/base64-encoder.git"
+      "url": "https://github.com/your-username/one-base64.git"
   },
-  "homepage": "https://github.com/your-username/base64-encoder/blob/main/README.md",
+   "homepage": "https://github.com/your-username/one-base64/blob/main/README.md",
   "bugs": {
-    "url": "https://github.com/your-username/base64-encoder/issues"
+      "url": "https://github.com/your-username/one-base64/issues"
   },
   "license": "MIT"
 }
@@ -529,7 +529,7 @@ npm run compile
 vsce package
 ```
 
-This generates: `base64-encoder-1.0.0.vsix`
+This generates: `one-base64-1.0.0.vsix`
 
 #### 7. Login to vsce
 
@@ -556,7 +556,7 @@ vsce publish major    # 1.0.0 → 2.0.0
 #### 9. Verify Publication
 
 1. Go to https://marketplace.visualstudio.com
-2. Search for "Base64 Encoder" (or your display name)
+2. Search for "One Base64" (or your display name)
 3. Your extension should appear!
 
 ### Publishing Troubleshooting
@@ -574,7 +574,7 @@ vsce publish major    # 1.0.0 → 2.0.0
 Files included in the marketplace package:
 
 ```
-base64-encoder-1.0.0.vsix
+one-base64-1.0.0.vsix
 ├── extension/
 │   ├── dist/                (compiled JavaScript)
 │   ├── package.json
@@ -680,10 +680,10 @@ You can unpublish or deprecate old versions:
 
 ```bash
 # Unpublish a version
-vsce unpublish your-publisher-name.base64-encoder@1.0.0
+vsce unpublish your-publisher-name.one-base64@1.0.0
 
 # Deprecate (keeps it available but marked as old)
-vsce unpublish your-publisher-name.base64-encoder --force
+vsce unpublish your-publisher-name.one-base64 --force
 ```
 
 ---

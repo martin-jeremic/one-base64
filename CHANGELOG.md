@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-01-16
 
 ### Added
-- Initial release of Base64 Encoder/Decoder extension
+- Initial release of one-base64 extension
 - Encode selected text to Base64 (`Ctrl+Shift+B` / `Cmd+Shift+B`)
 - Decode Base64 text to string (`Ctrl+Shift+U` / `Cmd+Shift+U`)
 - Fully offline operation with zero external dependencies
