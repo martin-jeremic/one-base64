@@ -46,7 +46,21 @@
         "mac": "cmd+shift+u",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "base64Encoder.encode",
+          "group": "1_modification",
+          "when": "editorTextFocus && editorHasSelection"
+        },
+        {
+          "command": "base64Encoder.decode",
+          "group": "1_modification",
+          "when": "editorTextFocus && editorHasSelection"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
