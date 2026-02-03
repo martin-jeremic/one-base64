@@ -9,6 +9,10 @@ on:
         default: "yes"
         type: choice
         options: ["yes", "no"]
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
 jobs:
   publish:
@@ -17,7 +21,9 @@ jobs:
     environment:
       name: marketplace
       url: https://marketplace.visualstudio.com/items?itemName=dev.one-base64
-    if: github.event.inputs.publish == 'yes'
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'yes') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24.13.0
           cache: npm
 
       - name: Install dependencies
@@ -39,6 +45,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: one-base64-${{ steps.pkg.outputs.version }}.vsix
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to VS Code Marketplace
         env:
