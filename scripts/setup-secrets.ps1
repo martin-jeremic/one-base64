@@ -54,7 +54,6 @@ if ([string]::IsNullOrWhiteSpace($token)) {
     exit 1
 }
 
-# BDzn7pTMCeqtXoSLzXcO8RMSBhYhnJfk4kgyy48TzHbZ6LmEMbefJQQJ99CBACAAAAAAAAAAAAAGAZDO44qe
 
 Write-Host ""
 Write-Host "Creating GitHub secret 'VSCE_PAT'..." -ForegroundColor Cyan
