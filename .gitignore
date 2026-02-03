@@ -31,7 +31,14 @@ npm-debug.log*
 
 # Build artifacts
 *.tsbuildinfo
+
 # Documentation files not needed for deployment
 # Keep: README.md (user-facing), CHANGELOG.md (version history), LICENSE
 # Exclude: Developer documentation folder
 docs/
+
+# Setup scripts (contain sensitive token management)
+# Note: setup-secrets.ps1 is safe to commit - it prompts for input
+# Do NOT commit scripts that contain actual tokens or secrets
+*.secret
+*.env.*.local

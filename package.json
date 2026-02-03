@@ -9,7 +9,8 @@
     "url": "https://github.com/yourusername/one-base64.git"
   },
   "engines": {
-    "vscode": "^1.108.0"
+    "vscode": "^1.96.0",
+    "node": ">=24.13.0"
   },
   "categories": [
     "Other"
@@ -46,7 +47,21 @@
         "mac": "cmd+shift+u",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "base64Encoder.encode",
+          "group": "1_modification",
+          "when": "editorTextFocus && editorHasSelection"
+        },
+        {
+          "command": "base64Encoder.decode",
+          "group": "1_modification",
+          "when": "editorTextFocus && editorHasSelection"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -60,18 +75,18 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.108.1",
-    "@types/node": "^25.0.10",
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
-    "@typescript-eslint/parser": "^8.53.1",
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "eslint": "^9.39.2",
     "typescript": "^5.9.3",
     "@vscode/vsce": "^3.7.1",
-    "semantic-release": "^25.0.2",
+    "semantic-release": "^25.0.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.2",
+    "@semantic-release/github": "^12.0.3",
     "@semantic-release/release-notes-generator": "^14.1.0"
   }
 }
