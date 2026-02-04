@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/martin-jeremic/one-base64/compare/v1.0.2...v1.0.3) (2026-02-04)
+
+
+### Bug Fixes
+
+* update readme ([917e4dc](https://github.com/martin-jeremic/one-base64/commit/917e4dc24e70ac8a46fcf80ac9a45fea6893bdab))
+
 ## [1.0.2](https://github.com/martin-jeremic/one-base64/compare/v1.0.1...v1.0.2) (2026-02-04)
 
 
