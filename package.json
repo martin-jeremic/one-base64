@@ -3,7 +3,7 @@
   "displayName": "One Base64",
   "description": "Encode and decode selected text to/from Base64 directly in VS Code editor. Fully offline, no external dependencies required.",
   "version": "1.0.0",
-  "publisher": "onedevteam.com",
+  "publisher": "onedevteam",
   "repository": {
     "type": "git",
     "url": "https://github.com/martin-jeremic/one-base64.git"
