@@ -29,7 +29,6 @@ module.exports = {
       '@semantic-release/exec',
       {
         prepareCmd: 'npm run compile',
-        publishCmd: 'npx @vscode/vsce publish --pat ${VSCE_PAT}',
       },
     ],
     [
