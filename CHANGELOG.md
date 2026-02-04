@@ -1,3 +1,23 @@
+# 1.0.0 (2026-02-04)
+
+
+### Bug Fixes
+
+* add lint ([08dd6fa](https://github.com/martin-jeremic/one-base64/commit/08dd6fa98c699d1cc8bcc5d1782e434b25c1a53c))
+* fix pipelines ([62d97e6](https://github.com/martin-jeremic/one-base64/commit/62d97e6e744a4c5893645567e0d0a728a7bd87dc))
+* update ([d37c973](https://github.com/martin-jeremic/one-base64/commit/d37c973360abe7f1eee54db16e95eb064690cda6))
+* update ([e755bca](https://github.com/martin-jeremic/one-base64/commit/e755bca0daed3eac7b07ff228bf626b655153941))
+* update ([c8c7dbf](https://github.com/martin-jeremic/one-base64/commit/c8c7dbf439c6b140f3901fce00d4aa9d1315e466))
+* update ([e34434c](https://github.com/martin-jeremic/one-base64/commit/e34434cf2f3dae2dd9965a9b7b7ab63404b0d131))
+* update package lock ([6183ef8](https://github.com/martin-jeremic/one-base64/commit/6183ef824c40d9e9093aff36ea8740c5a1bdaedd))
+* update repo url ([50a90eb](https://github.com/martin-jeremic/one-base64/commit/50a90eb914aec8e577a36047a504d2e3e9eb14da))
+* update repo url ([0625876](https://github.com/martin-jeremic/one-base64/commit/06258761822400ae99f9869494dc29928532ea3d))
+
+
+### Features
+
+* init ([527fd01](https://github.com/martin-jeremic/one-base64/commit/527fd014943d9814199c6e2fbff5a78b2b2f3cfe))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
