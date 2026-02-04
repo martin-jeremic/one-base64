@@ -1,32 +1,23 @@
 name: Publish VSIX
 
 on:
-  workflow_dispatch:
-    inputs:
-      publish:
-        description: "Confirm publish to VS Code Marketplace"
-        required: true
-        default: "yes"
-        type: choice
-        options: ["yes", "no"]
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
+  push:
+    branches: [ main ]
 
 jobs:
-  publish:
-    name: Package and Publish
+  release:
+    name: Semantic Release
     runs-on: ubuntu-latest
-    environment:
-      name: marketplace
-      url: https://marketplace.visualstudio.com/items?itemName=dev.one-base64
-    if: >-
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'yes') ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -37,18 +28,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Read package version
-        id: pkg
-        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
-
-      - name: Download VSIX from CI
-        uses: actions/download-artifact@v4
-        with:
-          name: one-base64-${{ steps.pkg.outputs.version }}.vsix
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to VS Code Marketplace
+      - name: Release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: npx vsce publish -p "$VSCE_PAT" one-base64-${{ steps.pkg.outputs.version }}.vsix
+        run: npx semantic-release
