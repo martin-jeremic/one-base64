@@ -1,5 +1,7 @@
 # One Base64 VS Code Extension
 
+![One Base64 Logo](img/one-base64-logo-transparent.png)
+
 ## Overview
 
 A lightweight, fully-offline VS Code extension that encodes selected text to Base64 and decodes selected Base64 strings back to text. This extension requires **zero external dependencies** and performs all operations **completely offline** without any API calls.

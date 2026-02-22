@@ -42,3 +42,5 @@ docs/
 # Do NOT commit scripts that contain actual tokens or secrets
 *.secret
 *.env.*.local
+token.txt
+architecture.md
